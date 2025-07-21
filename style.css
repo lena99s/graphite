@@ -1,0 +1,121 @@
+:root {
+    --background-color: #5a827e;
+    --container-color: #fff;
+    --add-note-color: #f9f9f9;
+    --hover-color: #f1f1f1;
+    --icon-color: #ccc1c1;
+    --list-color: #819067;
+    --main-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.3);
+    --list-shadow: 9px 9px 18px #b3b3b3, -9px -9px 18px #fffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: var(--background-color) !important;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+#main-container {
+    background-color: var(--container-color);
+    border-radius: 8px;
+    box-shadow: var(--main-shadow);
+    width: 827px; 
+    height: 600px;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+#header-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.blank-container {
+    background-color: var(--container-color);
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#note-adder {
+    background-color: var(--add-note-color);
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#note-adder:hover {
+    transition: 0.8s;
+    background-color: var(--hover-color);
+}
+
+#note-adder i {
+    font-size: 60px;
+    color: var(--icon-color);
+}
+
+/* list styles */
+#list-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+li {
+    background-color: var(--list-color);
+    margin: 5px 0;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: var(--list-shadow);
+}
+
+li span {
+    font-size: 12px;
+    flex-grow: 1;
+    word-wrap: break-word;
+    overflow-y: scroll;
+}
