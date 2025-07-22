@@ -5,6 +5,9 @@
     --hover-color: #f1f1f1;
     --icon-color: #ccc1c1;
     --list-color: #819067;
+    --button-color: #3e5f44;
+    --button-hover-color: #4d7656;
+    --new-container-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     --main-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.3);
     --list-shadow: 9px 9px 18px #b3b3b3, -9px -9px 18px #fffff;
 }
@@ -98,6 +101,7 @@ ul {
     text-align: center;
 }
 
+/* styles for new conatiners (notes) */
 li {
     background-color: var(--list-color);
     margin: 5px 0;
@@ -118,4 +122,112 @@ li span {
     flex-grow: 1;
     word-wrap: break-word;
     overflow-y: scroll;
+}
+
+#editButton, #deleteButton {
+    color: var(--container-color);
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+    width: 60px;
+}
+
+#deleteButton {
+    background-color: var(--hover-color);
+}
+
+#editButton {
+    background-color: var(--button-color);
+}
+
+#editButton {
+    background-color: var(--button-hover-color);
+}
+
+#deleteButton {
+    background-color: grey;
+}
+
+#createContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    background-color: var(--container-color);
+    border: 1px solid #ccc;
+    box-shadow: var(--new-container-shadow);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+textarea {
+    width: 300px;
+    height: 200px;
+    margin: 10px 0;
+    padding: 10px;
+    align-self: center;
+    border-radius: 4px;
+    border: 2px solid var(--list-color);
+    resize: none !important;
+    outline: none;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+
+#submitButton, #closeButton {
+    font-weight: 600;
+    width: 100px;
+    background-color: var(--list-color);
+    color: var(--container-color);
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#closeButton {
+    background-color: rgba(128, 128, 128, 0.8);
+}
+
+#submitButton:hover {
+    background-color: var(--button-hover-color);
+    transition: background-color 0.8s;
+}
+
+#closeButton:hover {
+    background-color: rgb(111, 111, 111);
+    transition: background-color 0.8s;
+}
+
+#edit-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: var(--new-container-shadow);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
