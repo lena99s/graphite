@@ -76,7 +76,7 @@ function editNote(noteId) {
     editingWindow.innerHTML = `
         <div id="editing-container" data-note-id="${noteId}">
             <h1>edit note</h1>
-            <textarea id="note-text">${noteText}</textarea>
+            <textarea id="note-text" placeholder="${noteText == "" ? "add some text here..." : ""}">${noteText}</textarea>
             <div id="button-container">
                 <button id="submitButton" onclick="updateNote()">done</button>
                 <button id="closeButton" onclick="closeEditWindow()">cancel</button>
@@ -100,21 +100,19 @@ function updateNote() {
     const noteText = document.getElementById("note-text").value.trim();
     const editingWindow = document.getElementById("editing-container");
 
-    if (noteText !== "") {
-        const noteId = editingWindow.getAttribute("data-note-id");
-        let notes = JSON.parse(localStorage.getItem("notes")) || [];
+    const noteId = editingWindow.getAttribute("data-note-id");
+    let notes = JSON.parse(localStorage.getItem("notes")) || [];
 
-        const updatedNotes = notes.map(note => {
-            if (note.id == noteId) {
-                return { id: note.id, text: noteText };
-            }
-            return note;
-        });
+    const updatedNotes = notes.map(note => {
+        if (note.id == noteId) {
+            return { id: note.id, text: noteText };
+        }
+        return note;
+    });
 
-        localStorage.setItem("notes", JSON.stringify(updatedNotes));
-        editingWindow.remove();
-        displayNotes();
-    }
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+    editingWindow.remove();
+    displayNotes();
 }
 
 // deleting note functionality 

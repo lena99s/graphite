@@ -46,12 +46,12 @@ body {
 
 #header-list {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .blank-container {
-    background-color: black;
+    background-color: var(--container-color);
     border: none;
     padding: 20px;
     border-radius: 8px;
@@ -90,8 +90,8 @@ body {
 /* list styles */
 #list-container {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-around;
 }
 
 ul {
@@ -99,6 +99,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    justify-content: space-between;
 }
 
 /* styles for new conatiners (notes) */
