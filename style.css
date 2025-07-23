@@ -51,7 +51,7 @@ body {
 }
 
 .blank-container {
-    background-color: var(--container-color);
+    background-color: black;
     border: none;
     padding: 20px;
     border-radius: 8px;
@@ -124,7 +124,7 @@ li span {
     overflow-y: scroll;
 }
 
-#editButton, #deleteButton {
+.editButton, .deleteButton {
     color: var(--container-color);
     border: none;
     padding: 5px 10px;
@@ -135,19 +135,19 @@ li span {
     width: 60px;
 }
 
-#deleteButton {
+.deleteButton {
     background-color: var(--hover-color);
 }
 
-#editButton {
+.editButton {
     background-color: var(--button-color);
 }
 
-#editButton {
+.editButton {
     background-color: var(--button-hover-color);
 }
 
-#deleteButton {
+.deleteButton {
     background-color: grey;
 }
 
@@ -213,7 +213,7 @@ textarea {
     transition: background-color 0.8s;
 }
 
-#edit-container {
+#editing-container {
     position: absolute;
     top: 50%;
     left: 50%;
